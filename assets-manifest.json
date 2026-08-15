@@ -2,6 +2,26 @@
   "_readme": "Danh mục ảnh/video trong thư mục dự án. Khi thêm ảnh/video THẬT của salon (chụp tại salon, chủ salon, khách, dịch vụ...), thêm entry mới vào đây với status='usable'. Khi dựng trang web, chỉ lấy asset có status='usable'.",
   "assets": [
     {
+      "id": "san-pham-td-xuan-dau-goi",
+      "path": "images/san-pham-td-xuan-dau-goi.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "tags": ["salon-that", "san-pham", "td-xuan"],
+      "notes": "Dầu gội TD.XUAN Ginger & Polygonum 500ml, chụp thật (unboxing trong xe hơi). Thương hiệu thật đã xác nhận, khác với các tên hãng suy đoán trước đó (WIN X.A, Olaplex, Goldwell...) - cần cập nhật lại bộ nhớ dự án.",
+      "suggested_use": "products section - chỉ nhận diện, CTA trỏ Zalo"
+    },
+    {
+      "id": "san-pham-td-xuan-dau-xa",
+      "path": "images/san-pham-td-xuan-dau-xa.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "tags": ["salon-that", "san-pham", "td-xuan"],
+      "notes": "Dầu xả TD.XUAN Ginger & Polygonum 500ml, cùng bộ với dầu gội, chụp thật.",
+      "suggested_use": "products section - chỉ nhận diện, CTA trỏ Zalo"
+    },
+    {
       "id": "video-0316",
       "path": "0316/0316.mp4",
       "type": "video",
@@ -64,7 +84,7 @@
       "date_added": "2026-08-15",
       "status": "usable",
       "tags": ["salon-that", "hero", "banner-chinh-thuc"],
-      "notes": "Banner bìa chính thức 'XEOHAIR SALON / TONY XEO' (2048x1154) - có logo, tagline, 5 ảnh dịch vụ (Nâu Mocha, VGAN, Tóc Bop, Duỗi Nano, Sóng Zeni) với watermark @salontonyxeo. LƯU Ý: banner ghi SĐT 0878585555, khác với SĐT đang dùng trên web (0941 366 996) — chưa xác nhận số nào đúng, KHÔNG tự động đổi số điện thoại trên site.",
+      "notes": "Banner bìa chính thức 'XEOHAIR SALON / TONY XEO' (2048x1154) - có logo, tagline, 5 ảnh dịch vụ (Nâu Mocha, VGAN, Tóc Bop, Duỗi Nano, Sóng Zeni) với watermark @salontonyxeo. LƯU Ý: banner ghi SĐT 0878585555, khác với SĐT đang dùng trên web (0773 321 222) — chưa xác nhận số nào đúng, KHÔNG tự động đổi số điện thoại trên site.",
       "suggested_use": "hero section banner"
     },
     {
