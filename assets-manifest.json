@@ -1,0 +1,49 @@
+{
+  "_readme": "Danh mục ảnh/video trong thư mục dự án. Khi thêm ảnh/video THẬT của salon (chụp tại salon, chủ salon, khách, dịch vụ...), thêm entry mới vào đây với status='usable'. Khi dựng trang web, chỉ lấy asset có status='usable'.",
+  "assets": [
+    {
+      "id": "video-0316",
+      "path": "0316/0316.mp4",
+      "type": "video",
+      "size_mb": 165.7,
+      "date_added": "2026-03-16",
+      "status": "khong_lien_quan",
+      "tags": ["khong-phai-salon", "kol-ai-go-global"],
+      "notes": "Đã xem nội dung bằng cách trích khung hình: đây là video quay màn hình (screen recording) duyệt YouTube kênh 'Phong Menly - Ai Go Global', dùng Lovable.dev + Notion để làm brand palette cho dự án khác tên 'KOL AI GO GLOBAL'. KHÔNG liên quan đến salon tóc Tony Xèo.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "audio-0316",
+      "path": "0316/0316.MP3",
+      "type": "audio",
+      "size_mb": 13.4,
+      "date_added": "2026-03-16",
+      "status": "khong_lien_quan",
+      "tags": ["khong-phai-salon", "kol-ai-go-global"],
+      "notes": "Cùng tên với video-0316, nhiều khả năng là track âm thanh tách riêng của video screen-recording đó. Không liên quan salon.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "video-1104",
+      "path": "1104.mp4",
+      "type": "video",
+      "size_mb": 381.9,
+      "date_added": "2025-11-04",
+      "status": "khong_lien_quan",
+      "tags": ["khong-phai-salon", "kol-ai-go-global"],
+      "notes": "Đã xem nội dung bằng cách trích khung hình (thời lượng 46 phút): đây là bản ghi buổi Zoom đào tạo 'KOL AI Go Global' (bảng Miro, nhiều người tham gia, slide 'KOL AI Affiliate BlueOcean'). KHÔNG liên quan đến salon tóc Tony Xèo.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "image-hf-20260207",
+      "path": "hf_20260207_064300_e0392f5e-37b9-4c9b-9e9a-6897f0f21613 (1).png",
+      "type": "image",
+      "size_mb": 8.6,
+      "date_added": "2026-02-15",
+      "status": "khong_lien_quan",
+      "tags": ["khong-phai-salon", "kol-ai-go-global"],
+      "notes": "Ảnh cô gái mặc áo yếm in chữ 'KOL AI GO GLOBAL' trong phòng tắm — cùng thương hiệu/dự án với 2 video trên, không liên quan salon tóc.",
+      "suggested_use": "khong_dung"
+    }
+  ]
+}

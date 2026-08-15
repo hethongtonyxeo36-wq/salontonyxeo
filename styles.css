@@ -1,0 +1,484 @@
+/* Salon Tóc Tony Xèo — stylesheet v2
+   Chrome (header icon-only + hamburger off-canvas + Zalo nổi + back-to-top)
+   được xây theo đúng pattern đã xác minh từ huynguyengroup.com, áp dụng cho quy mô 1 salon.
+   Placeholder cần thay trước khi public: ảnh (.ph-block), tên/giá sản phẩm cụ thể,
+   link Zalo/Messenger thật. */
+
+/* Bảng màu CHUẨN THƯƠNG HIỆU — xác nhận từ ảnh thật (mặt tiền, logo, nội thất)
+   ngày 2026-08-15: đen + vàng đồng/champagne. Salon cam kết một phong cách
+   tối màu, sang trọng — không đổi theo theme sáng/tối của hệ thống. */
+:root{
+  --bg:#131110;
+  --surface:#1D1B18;
+  --surface-2:#272420;
+  --ink:#F2EDE2;
+  --ink-soft:#AFA68F;
+  --line:#38332B;
+  --accent:#C9A24C;
+  --accent-soft:#2B2313;
+  --accent-ink:#E7CC8B;
+
+  --font-display: ui-serif, "Iowan Old Style", "Noto Serif", "Times New Roman", serif;
+  --font-body: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+/* text-wrap:balance cố tình KHÔNG dùng — gây lỗi vỡ dấu tiếng Việt khi kết hợp
+   với font serif hệ thống trong một số trình duyệt (đã kiểm chứng thực tế). */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;color:var(--ink);}
+p{margin:0 0 14px;max-width:60ch;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  display:inline-block;
+  font-size:0.78rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  background:var(--accent-soft);
+  padding:5px 12px;
+  border-radius:999px;
+  margin-bottom:16px;
+}
+
+/* ---------- header: 2 tầng, toàn icon ---------- */
+.topbar{
+  background:#000;
+  color:var(--ink);
+  font-size:0.8rem;
+}
+.topbar .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.topbar a{text-decoration:none;color:inherit;}
+.topbar .hotline{font-variant-numeric:tabular-nums;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent);}
+.topbar .social-row a{
+  opacity:0.85;
+  color:var(--ink);
+  border-color:color-mix(in srgb, var(--ink) 25%, transparent);
+}
+.topbar .social-row a:hover{opacity:1;color:var(--accent);}
+
+header.site{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-main{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:14px 0;
+}
+.header-icons{display:flex;align-items:center;gap:10px;}
+.header-icons.left{justify-content:flex-start;}
+.header-icons.right{justify-content:flex-end;}
+.icon-btn{
+  width:42px;height:42px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink);
+  text-decoration:none;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.icon-btn:hover{border-color:var(--accent);transform:translateY(-1px);}
+.icon-btn.accent{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+
+.wordmark{display:flex;flex-direction:column;align-items:center;line-height:1.05;text-decoration:none;color:var(--ink);}
+.wordmark .name{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--accent);letter-spacing:0.02em;}
+.wordmark .tag{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px;}
+
+.hamburger{
+  width:42px;height:42px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--surface);
+  display:inline-flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  flex:none;
+}
+.hamburger span, .hamburger span:before, .hamburger span:after{
+  content:"";display:block;width:16px;height:2px;background:var(--ink);position:relative;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.hamburger span:before{position:absolute;top:-5px;}
+.hamburger span:after{position:absolute;top:5px;}
+
+/* ---------- off-canvas menu ---------- */
+.offcanvas-scrim{
+  position:fixed;inset:0;
+  background:rgba(20,17,14,.45);
+  z-index:90;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+.offcanvas-scrim.open{opacity:1;pointer-events:auto;}
+
+.offcanvas{
+  position:fixed;
+  top:0;right:0;
+  height:100%;
+  width:min(340px,86vw);
+  background:var(--surface);
+  z-index:91;
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  display:flex;flex-direction:column;
+  box-shadow:-8px 0 30px rgba(0,0,0,.15);
+}
+.offcanvas.open{transform:translateX(0);}
+.offcanvas-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 22px;
+  border-bottom:1px solid var(--line);
+}
+.offcanvas-head .name{font-family:var(--font-display);font-size:1.2rem;}
+.offcanvas-close{
+  width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+  background:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);
+}
+.offcanvas nav{padding:12px 10px;overflow-y:auto;}
+.offcanvas nav a{
+  display:block;
+  padding:14px 12px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:1.02rem;
+  border-radius:8px;
+}
+.offcanvas nav a:hover{background:var(--accent-soft);color:var(--accent-ink);}
+.offcanvas-foot{
+  margin-top:auto;
+  padding:20px 22px;
+  border-top:1px solid var(--line);
+  display:flex;gap:10px;flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 22px;
+  border-radius:999px;
+  font-size:0.9rem;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid transparent;
+  transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+.btn-primary{background:var(--accent);color:var(--bg);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(201,162,76,.35);}
+.btn-accent{background:var(--ink);color:var(--bg);}
+.btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.3);}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.btn-block{width:100%;justify-content:center;}
+
+/* ---------- floating utilities ---------- */
+.fab-zalo{
+  position:fixed;
+  right:20px;bottom:78px;
+  width:54px;height:54px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
+  z-index:60;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.02em;
+}
+.back-to-top{
+  position:fixed;
+  right:20px;bottom:16px;
+  width:54px;height:54px;
+  border-radius:50%;
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.4);
+  z-index:60;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(8px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+.back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+/* ---------- hero: text + panel ảnh/video dọc 9:16 ----------
+   Salon chủ yếu có ảnh/video dọc (9:16) chứ không có banner ngang full-bleed
+   như mẫu — nên hero tách 2 cột: chữ bên trái, 1 khối media dọc thật bên phải,
+   thay vì ép ảnh dọc vào khung banner ngang. */
+.hero{border-top:none;padding:48px 0 0;}
+.hero .container{
+  display:grid;
+  grid-template-columns:1.1fr 0.7fr;
+  gap:40px;
+  align-items:center;
+}
+@media(max-width:900px){
+  .hero .container{grid-template-columns:1fr;}
+  .hero{padding-top:32px;}
+}
+.hero-text h1{font-size:clamp(2.4rem,5.5vw,3.6rem);line-height:0.98;margin-bottom:12px;}
+.hero-text .slogan{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--accent);
+  font-size:clamp(1.3rem,3.2vw,1.8rem);
+  margin-bottom:10px;
+}
+.hero-text .sub{color:var(--ink-soft);font-size:1rem;max-width:46ch;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.hero .ph-block{width:100%;max-width:380px;margin:0 auto;}
+@media(max-width:900px){ .hero .ph-block{max-width:320px;} }
+
+/* quick links */
+.quick-links{padding:0;border-top:none;}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.quick-grid a{
+  background:var(--surface);
+  padding:18px 14px;
+  text-align:center;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:0.85rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:background .2s ease, color .2s ease;
+}
+.quick-grid a:hover{background:var(--accent-soft);color:var(--accent-ink);}
+
+/* trust badge row */
+.badge-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  text-align:center;
+}
+@media(max-width:760px){ .badge-row{grid-template-columns:repeat(2,1fr);} }
+.badge{padding:6px;}
+.badge .ic{
+  width:52px;height:52px;margin:0 auto 12px;
+  border-radius:50%;
+  background:var(--accent-soft);
+  color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;
+}
+.badge b{display:block;font-size:0.95rem;}
+.badge span{display:block;font-size:0.8rem;color:var(--ink-soft);margin-top:4px;}
+
+/* ---------- placeholder image blocks ----------
+   Ảnh/video thật của salon hầu như đều dọc 9:16 (chụp điện thoại, Reels/TikTok) —
+   mọi khối .ph-block mặc định theo đúng tỉ lệ đó để không phải crop vuông/ngang
+   khi thay ảnh thật. Có thể thả thẳng <img> hoặc <video muted loop playsinline>
+   vào bên trong .ph-block, đã có sẵn style object-fit:cover. */
+.ph-block{
+  position:relative;
+  aspect-ratio:9/16;
+  border-radius:14px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 25% 20%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 55%),
+    repeating-linear-gradient(135deg, var(--surface-2), var(--surface-2) 10px, var(--surface) 10px, var(--surface) 20px);
+  border:1px solid var(--line);
+}
+.ph-block img, .ph-block video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.ph-block .cap{
+  position:absolute;
+  left:12px;bottom:12px;
+  font-size:0.72rem;
+  color:var(--ink-soft);
+  background:color-mix(in srgb, var(--bg) 80%, transparent);
+  padding:4px 10px;
+  border-radius:999px;
+}
+
+/* ---------- sections ---------- */
+section{padding:72px 0;border-top:1px solid var(--line);}
+section:first-of-type{border-top:none;}
+.section-head{max-width:60ch;margin-bottom:40px;}
+.section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);}
+.section-head p{color:var(--ink-soft);margin-top:10px;}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;}
+@media(max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+.about-grid .ph-block{max-width:340px;}
+.pull-quote{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:1.2rem;
+  color:var(--ink);
+  border-left:3px solid var(--accent);
+  padding-left:18px;
+  margin:20px 0;
+}
+
+/* card grid — dùng chung cho Dịch vụ & Sản phẩm, đúng kiểu thẻ Best Seller */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+@media(max-width:980px){ .card-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:560px){ .card-grid{grid-template-columns:1fr;} }
+.item-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+}
+.item-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--accent) 45%, var(--line));box-shadow:0 10px 28px rgba(0,0,0,.45);}
+.item-card .ph-block{border-radius:0;border:none;border-bottom:1px solid var(--line);}
+.item-card .body{padding:18px 18px 20px;}
+.item-card h3{font-size:1.08rem;margin-bottom:8px;}
+.item-card p{font-size:0.92rem;color:var(--ink-soft);margin-bottom:12px;}
+.tag-contact{
+  font-size:0.72rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  background:var(--accent-soft);
+  padding:4px 10px;
+  border-radius:999px;
+  display:inline-block;
+}
+
+/* smoky palette strip */
+.tone-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+@media(max-width:700px){ .tone-strip{grid-template-columns:repeat(2,1fr);} }
+.tone-card{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);}
+.tone-card .fill{height:120px;}
+.tone-card .meta{padding:12px 14px;}
+.tone-card .meta .name{font-weight:600;font-size:0.95rem;}
+.tone-card .meta .note{font-size:0.8rem;color:var(--ink-soft);}
+.tone-note{font-size:0.85rem;color:var(--ink-soft);margin-top:18px;}
+
+/* trước & sau — carousel-style strip */
+.ba-strip{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:220px;
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:8px;
+  scroll-snap-type:x proximity;
+}
+.ba-strip .ph-block{scroll-snap-align:start;}
+
+/* gallery — lưới ảnh/video dọc 9:16, giống lưới Story/Reels thật của salon */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+@media(max-width:860px){ .gallery-grid{grid-template-columns:repeat(3,1fr);} }
+@media(max-width:520px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* booking banner — dải vàng đồng, mirror đúng biển hiệu thật của salon */
+.booking-banner{
+  background:var(--accent);
+  color:var(--bg);
+  border-top:none;
+}
+.booking-banner .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.booking-banner h2{color:var(--bg);font-size:clamp(1.6rem,3vw,2.1rem);}
+.booking-banner p{color:color-mix(in srgb, var(--bg) 78%, transparent);margin-top:8px;}
+.booking-banner .slogan{font-family:var(--font-display);font-style:italic;color:var(--bg);}
+.booking-banner .actions{display:flex;gap:12px;flex-wrap:wrap;}
+.booking-banner .btn-primary{background:var(--bg);color:var(--accent);}
+.booking-banner .btn-outline{border-color:color-mix(in srgb, var(--bg) 35%, transparent);color:var(--bg);}
+
+/* contact */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+@media(max-width:900px){ .contact-wrap{grid-template-columns:1fr;} }
+.info-list{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:16px;}
+.info-list li{display:flex;gap:14px;align-items:flex-start;}
+.info-list .ic{
+  flex:none;width:38px;height:38px;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+}
+.info-list b{display:block;font-size:0.95rem;}
+.info-list span{color:var(--ink-soft);font-size:0.9rem;}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.map-block{aspect-ratio:4/3;}
+.map-block .pin{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;color:var(--ink-soft);text-align:center;padding:0 24px;
+}
+.map-block .pin b{color:var(--ink);font-size:0.95rem;}
+.map-block a{color:var(--accent-ink);font-size:0.85rem;text-decoration:underline;}
+
+/* footer */
+footer.site{background:var(--surface-2);border-top:1px solid var(--line);padding:48px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+@media(max-width:860px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:560px){ .footer-grid{grid-template-columns:1fr;} }
+.footer-grid h4{font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;font-family:var(--font-body);font-weight:600;}
+.footer-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:0.9rem;}
+.footer-grid ul a{text-decoration:none;color:var(--ink-soft);}
+.footer-grid ul a:hover{color:var(--ink);}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  font-size:0.82rem;color:var(--ink-soft);
+}
+.social-row{display:flex;gap:12px;}
+.social-row a{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;color:var(--ink);font-size:0.85rem;
+}
+.social-row a:hover{border-color:var(--ink);}

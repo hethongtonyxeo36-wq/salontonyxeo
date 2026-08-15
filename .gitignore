@@ -1,0 +1,7 @@
+# File media không liên quan đến salon (dự án KOL AI Go Global khác, quá nặng cho GitHub)
+/0316/
+/1104.mp4
+/hf_20260207_064300_e0392f5e-37b9-4c9b-9e9a-6897f0f21613 (1).png
+
+# Nơi thả ảnh/video thật của salon - xem xét thêm .gitattributes/LFS nếu file lớn
+# (không ignore thư mục này, chỉ ignore các file gốc phía trên)
