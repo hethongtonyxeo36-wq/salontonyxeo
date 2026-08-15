@@ -4,19 +4,18 @@
    Placeholder cần thay trước khi public: ảnh (.ph-block), tên/giá sản phẩm cụ thể,
    link Zalo/Messenger thật. */
 
-/* Bảng màu CHUẨN THƯƠNG HIỆU — xác nhận từ ảnh thật (mặt tiền, logo, nội thất)
-   ngày 2026-08-15: đen + vàng đồng/champagne. Salon cam kết một phong cách
-   tối màu, sang trọng — không đổi theo theme sáng/tối của hệ thống. */
+/* Bảng màu — nền SÁNG theo yêu cầu, vẫn giữ vàng đồng làm màu nhấn vì đó là
+   màu thật của logo/biển hiệu salon (xác nhận từ ảnh thật 2026-08-15). */
 :root{
-  --bg:#131110;
-  --surface:#1D1B18;
-  --surface-2:#272420;
-  --ink:#F2EDE2;
-  --ink-soft:#AFA68F;
-  --line:#38332B;
-  --accent:#C9A24C;
-  --accent-soft:#2B2313;
-  --accent-ink:#E7CC8B;
+  --bg:#FAF5E9;
+  --surface:#FFFFFF;
+  --surface-2:#F1E8D3;
+  --ink:#241E17;
+  --ink-soft:#7C7060;
+  --line:#E7DCC3;
+  --accent:#B8842C;
+  --accent-soft:#F4E7C8;
+  --accent-ink:#7A5518;
 
   --font-display: ui-serif, "Iowan Old Style", "Noto Serif", "Times New Roman", serif;
   --font-body: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -41,6 +40,8 @@ img{max-width:100%;display:block;}
 h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;color:var(--ink);}
 p{margin:0 0 14px;max-width:60ch;}
 .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+@media(min-width:1440px){ .container{max-width:1360px;} }
+@media(min-width:1800px){ .container{max-width:1560px;padding:0 40px;} }
 .eyebrow{
   display:inline-block;
   font-size:0.78rem;
@@ -55,8 +56,8 @@ p{margin:0 0 14px;max-width:60ch;}
 
 /* ---------- header: 2 tầng, toàn icon ---------- */
 .topbar{
-  background:#000;
-  color:var(--ink);
+  background:var(--ink);
+  color:var(--bg);
   font-size:0.8rem;
 }
 .topbar .container{
@@ -67,13 +68,13 @@ p{margin:0 0 14px;max-width:60ch;}
   padding-bottom:8px;
 }
 .topbar a{text-decoration:none;color:inherit;}
-.topbar .hotline{font-variant-numeric:tabular-nums;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent);}
+.topbar .hotline{font-variant-numeric:tabular-nums;font-weight:600;display:flex;align-items:center;gap:6px;color:#E9C067;}
 .topbar .social-row a{
   opacity:0.85;
-  color:var(--ink);
-  border-color:color-mix(in srgb, var(--ink) 25%, transparent);
+  color:var(--bg);
+  border-color:color-mix(in srgb, var(--bg) 25%, transparent);
 }
-.topbar .social-row a:hover{opacity:1;color:var(--accent);}
+.topbar .social-row a:hover{opacity:1;color:#E9C067;}
 
 header.site{
   position:sticky;
@@ -103,10 +104,10 @@ header.site{
   transition:border-color .2s ease, transform .2s ease;
 }
 .icon-btn:hover{border-color:var(--accent);transform:translateY(-1px);}
-.icon-btn.accent{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+.icon-btn.accent{background:var(--accent);color:var(--ink);border-color:var(--accent);}
 
 .wordmark{display:flex;flex-direction:column;align-items:center;line-height:1.05;text-decoration:none;color:var(--ink);}
-.wordmark .name{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--accent);letter-spacing:0.02em;}
+.wordmark .name{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--accent-ink);letter-spacing:0.02em;}
 .wordmark .tag{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px;}
 
 .hamburger{
@@ -188,8 +189,8 @@ header.site{
   border:1px solid transparent;
   transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
 }
-.btn-primary{background:var(--accent);color:var(--bg);}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(201,162,76,.35);}
+.btn-primary{background:var(--accent);color:var(--ink);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(184,132,44,.35);}
 .btn-accent{background:var(--ink);color:var(--bg);}
 .btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.3);}
 .btn-outline{background:transparent;color:var(--ink);border-color:var(--line);}
@@ -203,7 +204,7 @@ header.site{
   width:54px;height:54px;
   border-radius:50%;
   background:var(--accent);
-  color:var(--bg);
+  color:var(--ink);
   display:flex;align-items:center;justify-content:center;
   text-decoration:none;
   box-shadow:0 6px 18px rgba(0,0,0,.4);
@@ -229,33 +230,24 @@ header.site{
 }
 .back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
 
-/* ---------- hero: text + panel ảnh/video dọc 9:16 ----------
-   Salon chủ yếu có ảnh/video dọc (9:16) chứ không có banner ngang full-bleed
-   như mẫu — nên hero tách 2 cột: chữ bên trái, 1 khối media dọc thật bên phải,
-   thay vì ép ảnh dọc vào khung banner ngang. */
-.hero{border-top:none;padding:48px 0 0;}
-.hero .container{
-  display:grid;
-  grid-template-columns:1.1fr 0.7fr;
-  gap:40px;
-  align-items:center;
+/* ---------- hero: tối giản chữ, ảnh dẫn dắt (full-bleed, đúng phong cách mẫu) ---------- */
+.hero{position:relative;border-top:none;}
+.hero .ph-block{aspect-ratio:16/9;border-radius:0;border:none;}
+@media(min-width:860px){ .hero .ph-block{aspect-ratio:21/8;} }
+.hero .ph-block img{object-position:center 75%;}
+.hero-caption{
+  position:absolute;
+  left:0;right:0;top:0;
+  padding:24px;
+  background:linear-gradient(180deg, rgba(0,0,0,.65), transparent 75%);
+  color:#fff;
 }
-@media(max-width:900px){
-  .hero .container{grid-template-columns:1fr;}
-  .hero{padding-top:32px;}
-}
-.hero-text h1{font-size:clamp(2.4rem,5.5vw,3.6rem);line-height:0.98;margin-bottom:12px;}
-.hero-text .slogan{
+.hero-caption .slogan{
   font-family:var(--font-display);
   font-style:italic;
-  color:var(--accent);
-  font-size:clamp(1.3rem,3.2vw,1.8rem);
-  margin-bottom:10px;
+  font-size:clamp(1.3rem,3.5vw,2rem);
 }
-.hero-text .sub{color:var(--ink-soft);font-size:1rem;max-width:46ch;}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
-.hero .ph-block{width:100%;max-width:380px;margin:0 auto;}
-@media(max-width:900px){ .hero .ph-block{max-width:320px;} }
+.hero-caption .sub{font-size:0.9rem;opacity:0.9;margin-top:4px;}
 
 /* quick links */
 .quick-links{padding:0;border-top:none;}
@@ -294,13 +286,12 @@ header.site{
 .badge span{display:block;font-size:0.8rem;color:var(--ink-soft);margin-top:4px;}
 
 /* ---------- placeholder image blocks ----------
-   Ảnh/video thật của salon hầu như đều dọc 9:16 (chụp điện thoại, Reels/TikTok) —
-   mọi khối .ph-block mặc định theo đúng tỉ lệ đó để không phải crop vuông/ngang
-   khi thay ảnh thật. Có thể thả thẳng <img> hoặc <video muted loop playsinline>
-   vào bên trong .ph-block, đã có sẵn style object-fit:cover. */
+   Tỉ lệ khai báo riêng theo từng khu vực bên dưới (vuông cho thẻ dịch vụ/sản phẩm,
+   dọc 9:16 chỉ riêng cho dải "Trước & sau" vì đó là nơi dùng video/ảnh dọc thật).
+   Có thể thả thẳng <img> hoặc <video muted loop playsinline> vào .ph-block,
+   đã có sẵn style object-fit:cover. */
 .ph-block{
   position:relative;
-  aspect-ratio:9/16;
   border-radius:14px;
   overflow:hidden;
   background:
@@ -312,6 +303,12 @@ header.site{
   width:100%;
   height:100%;
   object-fit:cover;
+  display:block;
+}
+.ph-block iframe{
+  width:100%;
+  height:100%;
+  border:0;
   display:block;
 }
 .ph-block .cap{
@@ -334,7 +331,8 @@ section:first-of-type{border-top:none;}
 /* about */
 .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;}
 @media(max-width:860px){ .about-grid{grid-template-columns:1fr;} }
-.about-grid .ph-block{max-width:340px;}
+.about-grid .ph-block{aspect-ratio:4/5;}
+.about-grid .ph-block img{object-position:center 15%;}
 .pull-quote{
   font-family:var(--font-display);
   font-style:italic;
@@ -358,11 +356,11 @@ section:first-of-type{border-top:none;}
   border:1px solid var(--line);
   border-radius:14px;
   overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  box-shadow:0 1px 2px rgba(0,0,0,.05), 0 2px 8px rgba(0,0,0,.06);
   transition:box-shadow .3s ease, transform .3s ease, border-color .3s ease;
 }
-.item-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--accent) 45%, var(--line));box-shadow:0 10px 28px rgba(0,0,0,.45);}
-.item-card .ph-block{border-radius:0;border:none;border-bottom:1px solid var(--line);}
+.item-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--accent) 45%, var(--line));box-shadow:0 4px 10px rgba(0,0,0,.08), 0 8px 20px rgba(0,0,0,.1);}
+.item-card .ph-block{aspect-ratio:1/1;border-radius:0;border:none;border-bottom:1px solid var(--line);}
 .item-card .body{padding:18px 18px 20px;}
 .item-card h3{font-size:1.08rem;margin-bottom:8px;}
 .item-card p{font-size:0.92rem;color:var(--ink-soft);margin-bottom:12px;}
@@ -375,7 +373,15 @@ section:first-of-type{border-top:none;}
   padding:4px 10px;
   border-radius:999px;
   display:inline-block;
+  text-decoration:none;
+  font-weight:600;
+  transition:background .2s ease, color .2s ease;
 }
+a.tag-contact:hover{background:var(--accent);color:var(--ink);}
+
+/* products — chỉ 2 sản phẩm thật, canh giữa thay vì kéo giãn 4 cột */
+.products-grid{grid-template-columns:repeat(2,1fr);max-width:680px;margin:0 auto;}
+@media(max-width:640px){ .products-grid{grid-template-columns:1fr;} }
 
 /* smoky palette strip */
 .tone-strip{
@@ -390,6 +396,8 @@ section:first-of-type{border-top:none;}
 .tone-card .meta .name{font-weight:600;font-size:0.95rem;}
 .tone-card .meta .note{font-size:0.8rem;color:var(--ink-soft);}
 .tone-note{font-size:0.85rem;color:var(--ink-soft);margin-top:18px;}
+.tone-photos-title{font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin:36px 0 16px;}
+.tone-photos-grid .ph-block{aspect-ratio:1/1;}
 
 /* trước & sau — carousel-style strip */
 .ba-strip{
@@ -398,24 +406,120 @@ section:first-of-type{border-top:none;}
   grid-auto-columns:220px;
   gap:14px;
   overflow-x:auto;
-  padding-bottom:8px;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
   scroll-snap-type:x proximity;
 }
-.ba-strip .ph-block{scroll-snap-align:start;}
+.ba-strip .ph-block{aspect-ratio:9/16;scroll-snap-align:start;}
+.ba-strip::-webkit-scrollbar{display:none;}
 
-/* gallery — lưới ảnh/video dọc 9:16, giống lưới Story/Reels thật của salon */
+/* gallery */
 .gallery-grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:12px;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
-@media(max-width:860px){ .gallery-grid{grid-template-columns:repeat(3,1fr);} }
-@media(max-width:520px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+.gallery-grid .ph-block{aspect-ratio:1/1;}
+
+/* không gian salon — băng chuyền vô hạn, 1 hàng, chạy liên tục trái sang phải */
+.marquee{
+  display:flex;
+  gap:16px;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track{
+  display:flex;
+  flex-shrink:0;
+  gap:16px;
+  animation:marqueeScroll 36s linear infinite reverse;
+  will-change:transform;
+}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-item{
+  flex:none;
+  width:300px;
+  height:220px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--surface-2);
+}
+.marquee-item img{width:100%;height:100%;object-fit:cover;display:block;}
+@keyframes marqueeScroll{ from{transform:translateX(0);} to{transform:translateX(-100%);} }
+@media(max-width:640px){ .marquee-item{width:220px;height:160px;} }
+@media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} }
+
+/* customers portfolio — 2 hàng cuộn ngang, ~3-4 ảnh/màn hình, tối ưu cho mobile */
+.customers-rows{display:flex;flex-direction:column;gap:14px;}
+.customers-row{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:230px;
+  gap:14px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  scroll-snap-type:x proximity;
+}
+.customers-row::-webkit-scrollbar{display:none;}
+@media(max-width:640px){ .customers-row{grid-auto-columns:64%;} }
+.customers-row .ph-block{aspect-ratio:1/1;scroll-snap-align:start;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease;}
+.customers-row .ph-block:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 10px 24px rgba(0,0,0,.14);}
+.customers-row .ph-block img{transition:transform .4s ease;}
+.customers-row .ph-block:hover img{transform:scale(1.06);}
+.customers-cta{display:flex;justify-content:center;margin-top:28px;}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:200;
+  display:none;align-items:center;justify-content:center;
+  background:rgba(20,16,10,.92);
+  padding:24px;
+}
+.lightbox.open{display:flex;}
+.lightbox-img{
+  max-width:min(92vw, 720px);
+  max-height:86vh;
+  border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  object-fit:contain;
+  animation:lightboxIn .25s ease;
+}
+@keyframes lightboxIn{from{opacity:0;transform:scale(.97);}to{opacity:1;transform:scale(1);}}
+.lightbox-close, .lightbox-nav{
+  position:absolute;
+  width:44px;height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background .2s ease, transform .2s ease;
+}
+.lightbox-close:hover, .lightbox-nav:hover{background:rgba(255,255,255,.18);transform:scale(1.05);}
+.lightbox-close{top:20px;right:20px;}
+.lightbox-nav.prev{left:16px;top:50%;transform:translateY(-50%);}
+.lightbox-nav.next{right:16px;top:50%;transform:translateY(-50%);}
+.lightbox-nav.prev:hover{transform:translateY(-50%) scale(1.05);}
+.lightbox-nav.next:hover{transform:translateY(-50%) scale(1.05);}
+.lightbox-count{
+  position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.75);
+  font-size:.8rem;letter-spacing:.05em;
+}
+@media(max-width:640px){
+  .lightbox-nav{width:38px;height:38px;}
+  .lightbox-close{width:38px;height:38px;top:12px;right:12px;}
+}
 
 /* booking banner — dải vàng đồng, mirror đúng biển hiệu thật của salon */
 .booking-banner{
   background:var(--accent);
-  color:var(--bg);
+  color:var(--ink);
   border-top:none;
 }
 .booking-banner .container{
@@ -425,12 +529,12 @@ section:first-of-type{border-top:none;}
   gap:24px;
   flex-wrap:wrap;
 }
-.booking-banner h2{color:var(--bg);font-size:clamp(1.6rem,3vw,2.1rem);}
-.booking-banner p{color:color-mix(in srgb, var(--bg) 78%, transparent);margin-top:8px;}
-.booking-banner .slogan{font-family:var(--font-display);font-style:italic;color:var(--bg);}
+.booking-banner h2{color:var(--ink);font-size:clamp(1.6rem,3vw,2.1rem);}
+.booking-banner p{color:color-mix(in srgb, var(--ink) 75%, transparent);margin-top:8px;}
+.booking-banner .slogan{font-family:var(--font-display);font-style:italic;color:var(--ink);}
 .booking-banner .actions{display:flex;gap:12px;flex-wrap:wrap;}
-.booking-banner .btn-primary{background:var(--bg);color:var(--accent);}
-.booking-banner .btn-outline{border-color:color-mix(in srgb, var(--bg) 35%, transparent);color:var(--bg);}
+.booking-banner .btn-primary{background:var(--ink);color:var(--bg);}
+.booking-banner .btn-outline{border-color:color-mix(in srgb, var(--ink) 35%, transparent);color:var(--ink);}
 
 /* contact */
 .contact-wrap{

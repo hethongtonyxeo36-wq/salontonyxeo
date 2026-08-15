@@ -44,6 +44,322 @@
       "tags": ["khong-phai-salon", "kol-ai-go-global"],
       "notes": "Ảnh cô gái mặc áo yếm in chữ 'KOL AI GO GLOBAL' trong phòng tắm — cùng thương hiệu/dự án với 2 video trên, không liên quan salon tóc.",
       "suggested_use": "khong_dung"
+    },
+    {
+      "id": "image-hero-team",
+      "path": "images/hero-team-tony-xeo.jpg",
+      "type": "image",
+      "size_mb": 0.95,
+      "date_added": "2026-08-15",
+      "status": "thay_the",
+      "tags": ["salon-that", "tap-the", "hero", "da-thay-the"],
+      "notes": "Ảnh tập thể trước villa - đã bị THAY THẾ theo yêu cầu user (2026-08-15, 'ảnh bìa xấu quá') bằng image-hero-cover bên dưới. File vẫn còn trong images/ nếu cần dùng lại cho mục khác (VD: đội ngũ).",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "image-hero-cover",
+      "path": "images/hero-cover-tony-xeo.jpg",
+      "type": "image",
+      "size_mb": 0.19,
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "tags": ["salon-that", "hero", "banner-chinh-thuc"],
+      "notes": "Banner bìa chính thức 'XEOHAIR SALON / TONY XEO' (2048x1154) - có logo, tagline, 5 ảnh dịch vụ (Nâu Mocha, VGAN, Tóc Bop, Duỗi Nano, Sóng Zeni) với watermark @salontonyxeo. LƯU Ý: banner ghi SĐT 0878585555, khác với SĐT đang dùng trên web (0941 366 996) — chưa xác nhận số nào đúng, KHÔNG tự động đổi số điện thoại trên site.",
+      "suggested_use": "hero section banner"
+    },
+    {
+      "id": "image-chu-salon",
+      "path": "images/chu-salon-dung-trung.jpg",
+      "type": "image",
+      "size_mb": 0.42,
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "tags": ["salon-that", "chu-salon", "chan-dung"],
+      "notes": "Ảnh chân dung dọc (1708x2560) một người đàn ông trẻ mặc áo thun đen in chữ 'TONY XEO', đứng trước biển hiệu salon thật đang phát sáng (thấy rõ chữ '...NY XEO' phía sau) — nhiều khả năng là chủ salon Dũng Trung (Tony Xèo).",
+      "suggested_use": "about section - chủ salon portrait"
+    },
+    {
+      "id": "khach-hang-tonyxeo-zip-collages-thay-the",
+      "path": "(đã xoá khỏi images/ - thay thế toàn bộ)",
+      "type": "image",
+      "status": "thay_the",
+      "tags": ["salon-that", "khach-hang", "da-thay-the"],
+      "notes": "12 ảnh collage thương hiệu 'TONYXEO N' trích từ file zip 'Phong Menly [15-08-2026 12_16].zip' đã bị THAY THẾ hoàn toàn theo yêu cầu của user (2026-08-15) bằng bộ 12 ảnh chụp thật tại salon bên dưới (candid, có bảng hiệu/tạp dề salon trong khung hình). File collage gốc vẫn còn trong anh-video-that-cua-salon/anh/ (trong zip) nếu cần dùng lại.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "khach-hang-01",
+      "path": "images/khach-hang-01-uon-do-bien-tony-xeo.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "bien-hieu-that"],
+      "notes": "Tóc uốn đỏ, chụp trước biển hiệu neon 'TONY XEO' thật của salon, nụ cười tự nhiên.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-02",
+      "path": "images/khach-hang-02-bob-highlight-dang-lam.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "dang-lam"],
+      "notes": "Tóc bob highlight đỏ tím, đang trong lúc tạo kiểu, tạp dề nhân viên có chữ '...Xẻo Hair Salon' rõ nét.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-03",
+      "path": "images/khach-hang-03-den-song-ao-xeo-salon.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "bien-hieu-that"],
+      "notes": "Tóc đen uốn sóng dài, thấy chữ '...Xẻo Hair Salon' trên áo nhân viên đứng cạnh.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-04",
+      "path": "images/khach-hang-04-do-song-bien-tony-xeo.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "bien-hieu-that"],
+      "notes": "Tóc đỏ uốn sóng, thấy rõ chữ '...Y XEO' trên biển hiệu góc trái, stylist đeo kính đang chỉnh tóc, khách cười tươi.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-05",
+      "path": "images/khach-hang-05-vang-nau-thang-sang-trong.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "bien-hieu-that"],
+      "notes": "Tóc vàng nâu thẳng dài, dáng ngồi sang trọng, thấy chữ vàng 'E O' (một phần biển hiệu TONY XEO) phía sau.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-06",
+      "path": "images/khach-hang-06-nau-thang-hai-stylist.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "bien-hieu-that"],
+      "notes": "Tóc nâu thẳng dài, phía sau có 2 stylist salon, một người mặc áo có chữ '...Y XEO' và logo X rõ nét.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-07",
+      "path": "images/khach-hang-07-nau-song-vay-ren.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid"],
+      "notes": "Tóc nâu uốn sóng dài, mặc váy ren đen, phía sau thấy chữ vàng 'E' (biển hiệu salon), phong cách sang trọng.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-08",
+      "path": "images/khach-hang-08-den-song-cuoi-tuoi.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid"],
+      "notes": "Tóc đen uốn sóng dài, khách và stylist đều cười tươi, thấy gương/ghế salon phía sau.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-09",
+      "path": "images/khach-hang-09-den-thang-dang-nhuom.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "dang-lam"],
+      "notes": "Tóc đen thẳng dài, đang trong quá trình làm tóc, thấy rõ bảng màu nhuộm và stylist phía sau.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-10",
+      "path": "images/khach-hang-10-do-nau-cam-toc-salon.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid"],
+      "notes": "Tóc đỏ nâu cam dài, tay vuốt tóc, phía sau thấy kệ sản phẩm và nhân viên salon khác.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-11",
+      "path": "images/khach-hang-11-do-mai-bang.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "dang-lam"],
+      "notes": "Tóc đỏ dài mái bằng, stylist đang nâng tóc lên, thấy kệ sản phẩm salon phía sau.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-12",
+      "path": "images/khach-hang-12-nau-song-trang.jpg",
+      "type": "image",
+      "status": "usable",
+      "tags": ["salon-that", "khach-hang", "candid", "dang-lam"],
+      "notes": "Tóc nâu uốn sóng dài, stylist đang chỉnh dáng tóc hai bên, nền trắng đơn giản.",
+      "suggested_use": "customers section grid"
+    },
+    {
+      "id": "khach-hang-loai-do-khong-phai-salon",
+      "path": "(không copy vào images/ - loại)",
+      "type": "image",
+      "status": "loai_do_chat_luong",
+      "tags": ["khach-hang", "loai"],
+      "notes": "1 ảnh mặc bodysuit xanh rêu, tạo dáng cạnh tượng điêu khắc, không có bối cảnh/nhân sự salon nào trong khung hình — không đủ bằng chứng đây là ảnh khách hàng salon, không chuyên nghiệp cho mục đích portfolio công khai. Không chọn.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "khach-hang-loai-nen-mo-khong-ro-boi-canh",
+      "path": "(không copy vào images/ - loại)",
+      "type": "image",
+      "status": "loai_do_chat_luong",
+      "tags": ["salon-that", "khach-hang", "loai"],
+      "notes": "3 ảnh đẹp về ánh sáng/tóc nhưng nền mờ hoàn toàn hoặc tường trắng đơn giản, không có chi tiết nào chứng minh chụp tại salon (không biển hiệu, không nhân viên, không dụng cụ) — giữ lại 12 ảnh có bối cảnh salon rõ ràng hơn để ưu tiên tính xác thực. Không chọn.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "mau-nhuom-01",
+      "path": "images/mau-nhuom-01-khoi-anh-nau.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 9,
+      "tags": ["salon-that", "mau-nhuom", "khoi"],
+      "notes": "Ảnh collage 2x2 GỐC (nguyên bản, không crop — theo yêu cầu user 2026-08-15 muốn giữ dạng ghép so sánh nhiều góc thay vì cắt 1 ô). Tóc nhuộm tông nâu ánh khói, nền tường trắng đơn giản, không vướng người/vật lạ — khớp đúng tên 'Khói' ở dải minh hoạ phía trên trong cùng section #tones.",
+      "suggested_use": "tones section - kết quả nhuộm thực tế (khớp tên 'Khói')"
+    },
+    {
+      "id": "mau-nhuom-02",
+      "path": "images/mau-nhuom-02-nau-socola-bong.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 9,
+      "tags": ["salon-that", "mau-nhuom", "nau-chocolate"],
+      "notes": "Ảnh collage 2x2 GỐC, không crop. Tóc nâu socola bóng mượt — LƯU Ý: đây không phải tông khói thật (không có ánh xám/tro), nên KHÔNG xếp thẳng dưới tên 'Nâu khói'/'Xám khói' trong dải minh hoạ để tránh gây hiểu nhầm sai tông màu. Giữ tên riêng 'Nâu socola bóng', đặt trong khu 'kết quả thực tế' tách biệt, theo đúng quyết định của user (2026-08-15).",
+      "suggested_use": "tones section - kết quả nhuộm thực tế (tên riêng, không khớp 4 tông khói)"
+    },
+    {
+      "id": "mau-nhuom-03",
+      "path": "images/mau-nhuom-03-hong-khoi.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8.5,
+      "tags": ["salon-that", "mau-nhuom", "hong-khoi"],
+      "notes": "Ảnh collage 2x2 GỐC, không crop. Tóc tông hồng khói/rose gold, chụp ngoài khu vực quán/sân sáng, ghế màu xanh chanh — khớp đúng tên 'Hồng khói' ở dải minh hoạ phía trên trong cùng section #tones.",
+      "suggested_use": "tones section - kết quả nhuộm thực tế (khớp tên 'Hồng khói')"
+    },
+    {
+      "id": "mau-nhuom-04",
+      "path": "images/mau-nhuom-04-nau-do-dong.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8,
+      "tags": ["salon-that", "mau-nhuom", "nau-do-dong"],
+      "notes": "Ảnh collage 2x2 GỐC, không crop. Tóc nâu đỏ ánh đồng (auburn), thẳng mượt — LƯU Ý: không phải tông khói (auburn là tông ấm/đỏ, ngược với khói/tro), nên đặt tên riêng 'Nâu đỏ đồng', KHÔNG xếp dưới tên khói nào trong dải minh hoạ, theo đúng quyết định của user (2026-08-15).",
+      "suggested_use": "tones section - kết quả nhuộm thực tế (tên riêng, không khớp 4 tông khói)"
+    },
+    {
+      "id": "mau-nhuom-loai-dong-nguoi-xem",
+      "path": "(không copy - loại)",
+      "type": "image",
+      "status": "loai_do_chat_luong",
+      "score": 6.5,
+      "tags": ["mau-nhuom", "loai"],
+      "notes": "Tóc tông nâu hồng đẹp nhưng hậu cảnh là đám đông người xem/flash máy ảnh (giống buổi workshop đào tạo), không sạch bằng 4 ảnh đã chọn. Không dùng cho website.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "mau-nhuom-loai-tui-thuong-hieu-la",
+      "path": "(không copy - loại)",
+      "type": "image",
+      "status": "loai_do_chat_luong",
+      "score": 6,
+      "tags": ["mau-nhuom", "loai"],
+      "notes": "Tóc tông xám khói đậm đẹp nhưng trong khung hình có 1 túi giấy in một phần chữ thương hiệu khác (không phải Tony Xèo) trên bàn cạnh chậu cây — dễ gây nhầm lẫn thương hiệu nếu đăng công khai. Không dùng cho website.",
+      "suggested_use": "khong_dung"
+    },
+    {
+      "id": "khong-gian-01",
+      "path": "images/khong-gian-01-toan-canh-ghe-tao-kieu.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8.5,
+      "tags": ["salon-that", "khong-gian", "noi-that"],
+      "notes": "Toàn cảnh khu ghế tạo kiểu, thấy rõ nhiều gương khắc chữ 'TONYXEO', đèn LED âm trần, khách đang được phục vụ — không gian rộng, sáng, chuyên nghiệp.",
+      "suggested_use": "gallery section - không gian salon"
+    },
+    {
+      "id": "khong-gian-02",
+      "path": "images/khong-gian-02-mat-tien-tu-trong.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8.5,
+      "tags": ["salon-that", "khong-gian", "noi-that"],
+      "notes": "Nhìn từ trong salon ra cửa kính mặt tiền, nhân viên đồng phục in chữ 'X', cờ đỏ trang trí (dịp lễ), ánh sáng tự nhiên tốt.",
+      "suggested_use": "gallery section - không gian salon"
+    },
+    {
+      "id": "khong-gian-03",
+      "path": "images/khong-gian-03-goc-lam-toc-decor.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8,
+      "tags": ["salon-that", "khong-gian", "decor"],
+      "notes": "Góc làm tóc có biển chữ 'TONYXEO' khắc nổi và tượng điêu khắc trang trí — thể hiện phong cách 'sang trọng' đã nêu trong bộ nhớ brand.",
+      "suggested_use": "gallery section - không gian salon"
+    },
+    {
+      "id": "khong-gian-04",
+      "path": "images/khong-gian-04-mat-tien-salon-buoi-toi.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 9.5,
+      "tags": ["salon-that", "khong-gian", "mat-tien", "bien-hieu"],
+      "notes": "Ảnh mặt tiền tòa nhà salon lúc chập tối, biển hiệu 'TONY XÈO' và 'HAIR SALON TONY XÈO' phát sáng rõ nét, có trang trí đèn/cờ dịp lễ. Ảnh đẹp và xác thực nhất trong toàn bộ lô — điểm cao nhất, có thể cân nhắc dùng lại cho hero nếu sau này muốn thay ảnh tập thể hiện tại.",
+      "suggested_use": "gallery section - không gian salon (mặt tiền)"
+    },
+    {
+      "id": "khong-gian-05",
+      "path": "images/khong-gian-05-khu-vuc-guong-vom.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8,
+      "tags": ["salon-that", "khong-gian", "noi-that"],
+      "notes": "Khu vực gương vòm kiến trúc, nhiều nhân viên đang phục vụ khách cùng lúc — cho thấy quy mô và độ bận rộn của salon.",
+      "suggested_use": "gallery section - không gian salon"
+    },
+    {
+      "id": "khong-gian-06",
+      "path": "images/khong-gian-06-khu-tao-kieu.jpg",
+      "type": "image",
+      "date_added": "2026-08-15",
+      "status": "usable",
+      "score": 8,
+      "tags": ["salon-that", "khong-gian", "noi-that"],
+      "notes": "Khu vực tạo kiểu góc khác, vòm cong kiến trúc, nhiều gương khắc chữ TONYXEO, nhân viên đang phục vụ khách — bổ sung thêm cho đủ ảnh chạy băng chuyền 6 ảnh (yêu cầu user 2026-08-15: 'ảnh không gian hơi ít').",
+      "suggested_use": "gallery section marquee - không gian salon"
+    },
+    {
+      "id": "khong-gian-loai-dia-diem-khac",
+      "path": "(không copy - loại)",
+      "type": "image",
+      "status": "loai_khong_ro_dia_diem",
+      "tags": ["khong-gian", "loai"],
+      "notes": "Ảnh mặt tiền tòa nhà 'TONYXEO SALON ACADEMY' + 'TD.XUAN' — trông như một cơ sở/học viện đào tạo khác, KHÔNG khớp rõ ràng với địa chỉ 23 Lê Trung Giang đã xác nhận. Không dùng để tránh gây nhầm lẫn địa điểm, trừ khi user xác nhận đây đúng là cùng hệ thống salon.",
+      "suggested_use": "khong_dung - can user xac nhan dia diem"
+    },
+    {
+      "id": "khong-gian-loai-anh-nhom-khach",
+      "path": "(không copy - loại)",
+      "type": "image",
+      "status": "loai_sai_the_loai",
+      "tags": ["khach-hang", "loai"],
+      "notes": "2 ảnh gần giống nhau chụp 5 phụ nữ ăn mặc sang trọng ngồi sofa (có thể dịp khai trương/kỷ niệm). Không phải ảnh không gian, cũng không rõ đây là khách hàng hay người thân/đối tác salon — không đủ ngữ cảnh để dùng công khai. Không dùng cho website lần này.",
+      "suggested_use": "khong_dung - can user xac nhan ngu canh"
     }
   ]
 }

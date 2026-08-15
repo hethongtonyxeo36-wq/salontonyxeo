@@ -5,26 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tony Xèo — Salon Tóc Thanh Hóa</title>
 <meta name="description" content="Salon Tóc Tony Xèo — 23 Lê Trung Giang, Đông Vệ, TP. Thanh Hóa. Chuyên xử lý tóc khó, nhuộm màu tông khói, cắt layer chuẩn form và uốn nếp. Hotline 0941 366 996." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131110'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23C9A24C' text-anchor='middle'%3ETX%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23241E17'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23DDB25F' text-anchor='middle'%3ETX%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
 
 <!--
   GHI CHÚ TRIỂN KHAI — cần xử lý trước khi công khai trang:
-  1. Thay toàn bộ khối .ph-block bằng ảnh thật (không gian salon, tóc khách trước/sau, sản phẩm).
+  1. Thay ảnh vuông ở thẻ Sản phẩm/Không gian salon bằng ảnh thật (tỉ lệ vuông).
+     Riêng dải "Trước & sau" cố tình để dọc 9:16 vì đó là nơi dự kiến dùng video/ảnh
+     dọc thật (khách chủ yếu xem trên điện thoại) — CHỈ khu vực này đổi tỉ lệ.
   2. Xác nhận lại link Zalo (zalo.me/0941366996) và Messenger (m.me/dungtrungtonyxeo)
      — hiện đang suy ra từ SĐT và URL Facebook đã xác nhận trong bộ nhớ dự án,
      chưa được chủ salon xác nhận trực tiếp.
-  3. Mục Dịch vụ và Sản phẩm cố tình không có giá/tên hãng cụ thể vì chưa có dữ liệu
-     xác nhận — Sản phẩm hiện đặt tên theo NHÓM CÔNG DỤNG chung, chưa gắn thương hiệu
+  3. Mục Sản phẩm cố tình không có giá/tên hãng cụ thể vì chưa có dữ liệu
+     xác nhận — hiện đặt tên theo NHÓM CÔNG DỤNG chung, chưa gắn thương hiệu
      thật salon đang bán. Thay bằng tên hãng/giá thật khi có.
+  7. Section "Dịch vụ mũi nhọn" (4 thẻ Tóc khó/Màu khói/Layer/Uốn nếp) đã bị XOÁ theo
+     yêu cầu user (2026-08-15) vì trùng nội dung với dải video "Trước & sau" — 3 link
+     điều hướng cũ (menu, quick-links, footer) đã trỏ lại #before-after và #tones.
   4. 4 tông màu ở mục "Bảng màu khói" là minh hoạ theo palette thiết kế, không phải
      mã màu công thức nhuộm thật.
   5. Chrome (header icon-only, menu off-canvas, bong bóng Zalo nổi, back-to-top) được
      dựng theo đúng pattern đã xác minh trực tiếp từ mã nguồn huynguyengroup.com,
      áp dụng lại đúng quy mô 1 salon (one-page, không multi-page thật).
-  6. Bảng màu đen + vàng đồng (xem :root trong styles.css) đã được xác nhận từ ảnh
-     mặt tiền/logo/nội thất thật của salon (toplist.vn/tripi.vn, 2026-08-15) — đây
-     là bảng màu CHUẨN thương hiệu, không phải suy đoán như bản thiết kế đầu tiên.
+  6. Bảng màu nền SÁNG + vàng đồng làm nhấn (xem :root trong styles.css). Vàng đồng
+     lấy từ logo/biển hiệu thật của salon (toplist.vn/tripi.vn, 2026-08-15), nhưng
+     nền được giữ sáng theo yêu cầu, không dùng nền đen dù ảnh thật cho thấy nội
+     thất/biển hiệu tối màu.
 -->
 
 </head>
@@ -80,9 +86,10 @@
   <nav id="offcanvasNav">
     <a href="#top">Trang chủ</a>
     <a href="#about">Về chúng tôi</a>
-    <a href="#services">Dịch vụ</a>
+    <a href="#before-after">Trước &amp; sau</a>
     <a href="#products">Sản phẩm</a>
     <a href="#tones">Bảng màu khói</a>
+    <a href="#customers">Khách hàng</a>
     <a href="#gallery">Không gian salon</a>
     <a href="#contact">Liên hệ</a>
   </nav>
@@ -93,27 +100,21 @@
 
 <main id="top">
 
-  <!-- HERO: chữ + 1 khối ảnh/video dọc 9:16 thật, không ép vào banner ngang -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-text">
-        <span class="eyebrow">Salon tóc · TP. Thanh Hóa</span>
-        <h1>Tony Xèo</h1>
-        <p class="slogan">"Chưa ưng ý, chưa thôi."</p>
-        <p class="sub">12 năm cầm kéo tại Thanh Hóa — chuyên trị tóc khó, tóc từng hư tổn ở nơi khác, và làm chủ những tông màu khói khó nhất.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="tel:0941366996">Gọi đặt lịch</a>
-          <a class="btn btn-outline" href="https://zalo.me/0941366996" target="_blank" rel="noopener">Nhắn Zalo</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="ph-block">
+      <img src="images/hero-cover-tony-xeo.jpg" alt="Xeohair Salon Tony Xèo - banner dịch vụ">
+      <div class="hero-caption">
+        <div class="slogan">"Chưa ưng ý, chưa thôi."</div>
+        <div class="sub">Tony Xèo — Salon tóc tại Thanh Hóa</div>
       </div>
-      <div class="ph-block"><span class="cap">Ảnh/video dọc 9:16 — thay ảnh thật tại đây</span></div>
     </div>
   </section>
 
   <!-- QUICK LINKS -->
   <section class="quick-links" style="border-top:none;">
     <div class="quick-grid">
-      <a href="#services">Dịch vụ</a>
+      <a href="#before-after">Trước &amp; sau</a>
       <a href="#products">Sản phẩm</a>
       <a href="#contact">Đặt lịch</a>
     </div>
@@ -148,7 +149,7 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="container about-grid">
-      <div class="ph-block"><span class="cap">Chủ salon Dũng Trung (Tony Xèo)</span></div>
+      <div class="ph-block"><img src="images/chu-salon-dung-trung.jpg" alt="Dũng Trung (Tony Xèo) - chủ salon"></div>
       <div>
         <span class="eyebrow">Về Tony Xèo</span>
         <h2>Người cầm kéo, không phải cái máy làm tóc</h2>
@@ -159,52 +160,34 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services">
+  <!-- BEFORE & AFTER — đẩy lên thay vị trí "Dịch vụ mũi nhọn" cũ vì nội dung
+       video đã bao trùm gần đủ 4 điều khách tìm đến salon (tóc khó, màu, layer/uốn, duỗi) -->
+  <section id="before-after">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Dịch vụ mũi nhọn</span>
-        <h2>Bốn thế mạnh khách tìm đến Tony Xèo</h2>
-        <p>Không chạy theo mọi dịch vụ — tập trung làm thật giỏi bốn việc này.</p>
+        <span class="eyebrow">Trước &amp; sau</span>
+        <h2>Tóc khó, trước khi và sau khi ghé Tony Xèo</h2>
+        <p>Bằng chứng trực quan nhất cho thế mạnh "tóc khó" — ảnh/video thật sẽ cập nhật theo từng khách đã đồng ý chia sẻ.</p>
       </div>
-      <div class="card-grid">
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Trước / sau</span></div>
-          <div class="body">
-            <h3>Tóc khó</h3>
-            <p>Tóc hư tổn, từng nhuộm hoặc làm hỏng ở nơi khác — salon nhận xử lý lại từ đầu, phục hồi và làm đúng theo ý khách.</p>
-            <span class="tag-contact">Liên hệ tư vấn</span>
-          </div>
+      <div class="ba-strip">
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/6uEOGaC9rSI" title="Tóc ngắn Boplady tặng" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Bảng màu khói</span></div>
-          <div class="body">
-            <h3>Màu tông khói</h3>
-            <p>Thế mạnh riêng của salon: khói, nâu khói, xám khói, hồng khói — những tông màu khó lên chuẩn nếu không quen tay.</p>
-            <span class="tag-contact">Liên hệ báo giá</span>
-          </div>
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/5w-FQouB6no" title="Tóc uốn sóng bung tầng" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Layer chuẩn form</span></div>
-          <div class="body">
-            <h3>Cắt layer chuẩn form</h3>
-            <p>Cắt layer đúng khung mặt, kết hợp nhuộm màu tự nhiên để tổng thể hài hoà, không lệch tông.</p>
-            <span class="tag-contact">Liên hệ báo giá</span>
-          </div>
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/TrqQROhGKPM" title="Tóc uốn Layer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Nếp uốn tự nhiên</span></div>
-          <div class="body">
-            <h3>Uốn nếp</h3>
-            <p>Sở trường riêng của Tony Xèo — nếp uốn mềm, tự nhiên, giữ được lâu mà tóc không bị khô xơ.</p>
-            <span class="tag-contact">Liên hệ báo giá</span>
-          </div>
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/ut8UqcPz1gk" title="Tóc duỗi siêu mượt" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/4rYH6ol18VA" title="Tóc nhuộm siêu bóng" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="ph-block">
+          <iframe src="https://www.youtube.com/embed/3Pn6RI_jZ4w" title="Tóc xoăn cụp tầng mái bay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -236,23 +219,45 @@
         </div>
       </div>
       <p class="tone-note">* Màu minh hoạ theo bảng thiết kế của trang, không phải mã công thức nhuộm — salon sẽ tư vấn tông chính xác theo tóc nền của từng khách.</p>
+
+      <h3 class="tone-photos-title">Một vài kết quả nhuộm thực tế tại salon</h3>
+      <div class="gallery-grid tone-photos-grid">
+        <div class="ph-block"><img src="images/mau-nhuom-01-khoi-anh-nau.jpg" alt="Kết quả nhuộm màu khói ánh nâu tại Tony Xèo" loading="lazy"><span class="cap">Khói ánh nâu</span></div>
+        <div class="ph-block"><img src="images/mau-nhuom-02-nau-socola-bong.jpg" alt="Kết quả nhuộm màu nâu socola bóng mượt tại Tony Xèo" loading="lazy"><span class="cap">Nâu socola bóng</span></div>
+        <div class="ph-block"><img src="images/mau-nhuom-03-hong-khoi.jpg" alt="Kết quả nhuộm màu hồng khói tại Tony Xèo" loading="lazy"><span class="cap">Hồng khói</span></div>
+        <div class="ph-block"><img src="images/mau-nhuom-04-nau-do-dong.jpg" alt="Kết quả nhuộm màu nâu đỏ đồng tại Tony Xèo" loading="lazy"><span class="cap">Nâu đỏ đồng</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- BEFORE & AFTER (thay "You May Like" của mẫu) -->
-  <section id="before-after">
+  <!-- CUSTOMERS -->
+  <section id="customers">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Trước &amp; sau</span>
-        <h2>Tóc khó, trước khi và sau khi ghé Tony Xèo</h2>
-        <p>Bằng chứng trực quan nhất cho thế mạnh "tóc khó" — ảnh/video thật sẽ cập nhật theo từng khách đã đồng ý chia sẻ.</p>
+        <span class="eyebrow">Khách hàng Tony Xèo</span>
+        <h2>Những mái tóc đã hoàn thiện tại salon</h2>
+        <p>Chọn lọc từ các mẫu tóc thật do salon thực hiện — mỗi kiểu là một ca xử lý riêng, không dùng ảnh mẫu ngoài.</p>
       </div>
-      <div class="ba-strip">
-        <div class="ph-block"><span class="cap">Trước / sau #1</span></div>
-        <div class="ph-block"><span class="cap">Trước / sau #2</span></div>
-        <div class="ph-block"><span class="cap">Trước / sau #3</span></div>
-        <div class="ph-block"><span class="cap">Trước / sau #4</span></div>
-        <div class="ph-block"><span class="cap">Trước / sau #5</span></div>
+      <div class="customers-rows" id="customersGrid">
+        <div class="customers-row">
+          <div class="ph-block"><img src="images/khach-hang-01-uon-do-bien-tony-xeo.jpg" alt="Khách hàng Tony Xèo - tóc uốn đỏ, chụp trước biển hiệu salon" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-02-bob-highlight-dang-lam.jpg" alt="Khách hàng Tony Xèo - tóc bob highlight, đang tạo kiểu tại salon" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-03-den-song-ao-xeo-salon.jpg" alt="Khách hàng Tony Xèo - tóc đen uốn sóng, thấy áo nhân viên Xèo Hair Salon" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-04-do-song-bien-tony-xeo.jpg" alt="Khách hàng Tony Xèo - tóc đỏ uốn sóng, chụp trước biển hiệu salon" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-05-vang-nau-thang-sang-trong.jpg" alt="Khách hàng Tony Xèo - tóc vàng nâu thẳng, phong cách sang trọng" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-06-nau-thang-hai-stylist.jpg" alt="Khách hàng Tony Xèo - tóc nâu thẳng, có 2 stylist salon phía sau" loading="lazy"></div>
+        </div>
+        <div class="customers-row">
+          <div class="ph-block"><img src="images/khach-hang-07-nau-song-vay-ren.jpg" alt="Khách hàng Tony Xèo - tóc nâu uốn sóng, váy ren" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-08-den-song-cuoi-tuoi.jpg" alt="Khách hàng Tony Xèo - tóc đen uốn sóng, nụ cười tươi cùng stylist" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-09-den-thang-dang-nhuom.jpg" alt="Khách hàng Tony Xèo - tóc đen thẳng, đang trong quá trình nhuộm" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-10-do-nau-cam-toc-salon.jpg" alt="Khách hàng Tony Xèo - tóc đỏ nâu cam, chụp tại khu vực tạo kiểu" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-11-do-mai-bang.jpg" alt="Khách hàng Tony Xèo - tóc đỏ mái bằng" loading="lazy"></div>
+          <div class="ph-block"><img src="images/khach-hang-12-nau-song-trang.jpg" alt="Khách hàng Tony Xèo - tóc nâu uốn sóng, đang chỉnh dáng" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="customers-cta">
+        <a class="btn btn-outline" href="https://www.facebook.com/dungtrungtonyxeo/" target="_blank" rel="noopener">Xem thêm trên Facebook →</a>
       </div>
     </div>
   </section>
@@ -264,15 +269,23 @@
         <span class="eyebrow">Không gian salon</span>
         <h2>Một góc thoải mái giữa lòng Thanh Hóa</h2>
       </div>
-      <div class="gallery-grid">
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
-        <div class="ph-block"></div>
+      <div class="marquee" id="spaceMarquee">
+        <div class="marquee-track">
+          <div class="marquee-item"><img src="images/khong-gian-04-mat-tien-salon-buoi-toi.jpg" alt="Mặt tiền salon Tony Xèo buổi tối, biển hiệu phát sáng" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-01-toan-canh-ghe-tao-kieu.jpg" alt="Toàn cảnh khu vực ghế tạo kiểu, gương Tony Xèo" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-02-mat-tien-tu-trong.jpg" alt="Không gian salon nhìn từ trong ra cửa kính" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-05-khu-vuc-guong-vom.jpg" alt="Khu vực gương vòm, nhân viên đang phục vụ khách" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-03-goc-lam-toc-decor.jpg" alt="Góc làm tóc với trang trí tượng điêu khắc" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-06-khu-tao-kieu.jpg" alt="Khu vực tạo kiểu, vòm cong, gương Tony Xèo" loading="lazy"></div>
+        </div>
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item"><img src="images/khong-gian-04-mat-tien-salon-buoi-toi.jpg" alt="" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-01-toan-canh-ghe-tao-kieu.jpg" alt="" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-02-mat-tien-tu-trong.jpg" alt="" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-05-khu-vuc-guong-vom.jpg" alt="" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-03-goc-lam-toc-decor.jpg" alt="" loading="lazy"></div>
+          <div class="marquee-item"><img src="images/khong-gian-06-khu-tao-kieu.jpg" alt="" loading="lazy"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -282,44 +295,26 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Sản phẩm chính hãng</span>
-        <h2>Sản phẩm salon dùng và chọn lọc để bán</h2>
-        <p>Đều là sản phẩm chính hãng, được chọn kỹ để hợp với tóc khó và tóc vừa nhuộm/uốn — salon tư vấn đúng sản phẩm theo tình trạng tóc từng khách.</p>
+        <h2>TD.XUAN Ginger &amp; Polygonum</h2>
+        <p>Dầu gội &amp; dầu xả tinh chất gừng, nghể răm — salon đang dùng và bán tại quầy. Ảnh chỉ để nhận diện sản phẩm, liên hệ Zalo để được tư vấn và đặt mua.</p>
       </div>
-      <div class="card-grid">
+      <div class="card-grid products-grid">
 
         <div class="item-card">
-          <div class="ph-block"><span class="cap">Sản phẩm</span></div>
+          <div class="ph-block"><img src="images/san-pham-td-xuan-dau-goi.jpg" alt="Dầu gội TD.XUAN Ginger & Polygonum 500ml" loading="lazy"></div>
           <div class="body">
-            <h3>Dầu gội phục hồi tóc hư tổn</h3>
-            <p>Cho tóc đã qua nhuộm/uốn nhiều lần, cần phục hồi từ gốc.</p>
-            <span class="tag-contact">Liên hệ</span>
+            <h3>TD.XUAN Shampoo — Ginger &amp; Polygonum</h3>
+            <p>Dầu gội tinh chất gừng &amp; nghể răm, 0% silicone, công nghệ postbiotics 4.0 — giảm rụng, sạch gàu, chai 500ml.</p>
+            <a class="tag-contact" href="https://zalo.me/0941366996" target="_blank" rel="noopener">Tư vấn Zalo</a>
           </div>
         </div>
 
         <div class="item-card">
-          <div class="ph-block"><span class="cap">Sản phẩm</span></div>
+          <div class="ph-block"><img src="images/san-pham-td-xuan-dau-xa.jpg" alt="Dầu xả TD.XUAN Ginger & Polygonum 500ml" loading="lazy"></div>
           <div class="body">
-            <h3>Dầu xả dưỡng ẩm chuyên sâu</h3>
-            <p>Giữ ẩm, giảm xơ rối cho tóc khô sau khi làm màu.</p>
-            <span class="tag-contact">Liên hệ</span>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Sản phẩm</span></div>
-          <div class="body">
-            <h3>Kem ủ phục hồi chuyên sâu</h3>
-            <p>Dùng định kỳ tại salon hoặc tại nhà cho tóc yếu, dễ gãy.</p>
-            <span class="tag-contact">Liên hệ</span>
-          </div>
-        </div>
-
-        <div class="item-card">
-          <div class="ph-block"><span class="cap">Sản phẩm</span></div>
-          <div class="body">
-            <h3>Xịt dưỡng nhiệt trước uốn/duỗi</h3>
-            <p>Bảo vệ tóc khỏi nhiệt trong quá trình uốn nếp hoặc duỗi.</p>
-            <span class="tag-contact">Liên hệ</span>
+            <h3>TD.XUAN Conditioner — Ginger &amp; Polygonum</h3>
+            <p>Dầu xả cùng dòng, phục hồi và tăng độ bóng cho tóc sau gội — dùng kèm dầu gội để đạt hiệu quả tốt nhất, chai 500ml.</p>
+            <a class="tag-contact" href="https://zalo.me/0941366996" target="_blank" rel="noopener">Tư vấn Zalo</a>
           </div>
         </div>
 
@@ -397,10 +392,10 @@
       <div>
         <h4>Dịch vụ</h4>
         <ul>
-          <li><a href="#services">Tóc khó</a></li>
-          <li><a href="#services">Màu tông khói</a></li>
-          <li><a href="#services">Layer chuẩn form</a></li>
-          <li><a href="#services">Uốn nếp</a></li>
+          <li><a href="#before-after">Tóc khó</a></li>
+          <li><a href="#tones">Màu tông khói</a></li>
+          <li><a href="#before-after">Layer chuẩn form</a></li>
+          <li><a href="#before-after">Uốn nếp</a></li>
         </ul>
       </div>
       <div>
@@ -428,6 +423,21 @@
     </div>
   </div>
 </footer>
+
+<!-- LIGHTBOX (xem ảnh khách hàng phóng to) -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Ảnh trước">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Ảnh tiếp theo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox-count" id="lightboxCount"></div>
+</div>
 
 <!-- FLOATING UTILITIES -->
 <a class="fab-zalo" href="https://zalo.me/0941366996" target="_blank" rel="noopener" aria-label="Chat Zalo">Zalo</a>

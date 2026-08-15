@@ -5,3 +5,7 @@
 
 # Nơi thả ảnh/video thật của salon - xem xét thêm .gitattributes/LFS nếu file lớn
 # (không ignore thư mục này, chỉ ignore các file gốc phía trên)
+
+# Video YouTube Shorts đã tải về máy để lấy tiêu đề/kiểm tra - web chỉ nhúng link,
+# không tự host file nên không đẩy lên repo.
+/videos/
